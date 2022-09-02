@@ -1,0 +1,39 @@
+<button type="button" class="btn btn-primary"(click)="showStyle()">primary</button>
+<div class="card" *ngIf="showFlag">
+    <div class="card body">This is some text within a card body.</div>
+</div>
+
+   
+   <div class="container">
+
+    <table class="table" border="4">
+    <tr>
+        
+        <th>Id</th>
+        <th>Title</th>
+        <th>UserId</th>
+        <th>Id</th>>
+        
+        
+        </tr>
+        <tr *ngFor="let data of arrData" >
+            <td>{{data.id}}</td>
+            <td>{{data.title}}</td>
+            <td>{{data.userId}}</td>
+            <td>{{data.id}}</td>
+            <td><button (click)="openModal(data) ">EDIT</button></td><br>
+           <!-- <td> <button (click)="deletemodel(data.Id)">Delete</button><td><br> -->
+            
+        </tr>
+    </table><br>
+</div>
+<app-dashboard [item]="currentItem" (newItemEvent)="addItem($event)"  ></app-dashboard>
+    
+<form  [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+    <p>Id:
+    <input type="text"  class="form-control" formControlName="id" ><br>
+    <p>Title:
+    <input type="text" class="form-control"  formControlName="title">
+    <button type="submit"  class="btn btn-primary" >Update</button>
+     </form>
+     

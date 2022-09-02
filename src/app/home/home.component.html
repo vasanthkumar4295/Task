@@ -1,0 +1,34 @@
+
+   <div class="container">
+
+    <table class="table" border="4">
+    <tr> 
+        
+        <th>Id</th>
+        <th>Title</th>
+        <th>BRAND<th>
+        <th>PRIZE</th>
+        
+        
+        
+        </tr>
+        <tr *ngFor="let data of arrData |paginate: { itemsPerPage: 15, currentPage: p,totalItems:totalLength }" >
+            <td>{{data.id}}</td>
+            <td>{{data.title}}</td>
+            <td> {{data.brand}}</td>
+
+            <td>{{data.price}}</td>
+            <td><button  class="btn btn-primary" (click)="home(data)">Detail</button></td><br>
+        </tr>
+    </table><br>
+    <pagination-controls class="text-center" (pageChange)="p = $event"></pagination-controls>
+</div>
+
+<app-dashboard [item]="currentItem"></app-dashboard>
+<form  [formGroup]="formdata" >
+  <p>Id:
+  <input type="text"  class="form-control" formControlName="id" ><br>
+  <p>Title:
+  <input type="text" class="form-control"  formControlName="title">
+  <button type="submit"  class="btn btn-primary" >Update</button>
+   </form>

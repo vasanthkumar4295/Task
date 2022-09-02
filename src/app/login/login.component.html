@@ -1,0 +1,43 @@
+
+    
+<!-- <form action="action_page.php" [formGroup]="forms" style="border:1px solid #ccc">
+
+    <h1>LOGIN PAGE</h1>
+    <p>Please fill the correct email and password.</p>
+    <hr>
+
+    <label for="email"><b>Email</b></label><BR>
+    <input type="email" placeholder="Enter Email" name="email" id="email1" formControlName="EmailId" class="invalid-feedback" >
+    
+    <div class="error" *ngIf="forms.get('EmailId')?.invalid &&forms.get('EmailId')">email is required
+     </div><br>
+    <label for="psw"><b>Password</b></label><BR>
+    <input type="password" placeholder="Enter Password" name="Password" id="pwd1" formControlName="Password" class="invalid-feedback" >
+    <div class="error" *ngIf="forms.get('Password')?.invalid &&forms.get('Password')">Password is required
+    </div><br>
+  <button  (click)="checkData()" >Sign Up</button>
+    
+  
+</form> -->
+<form >
+
+  <h1>LOGIN PAGE</h1>
+  <p>Please fill the correct email and password.</p>
+  <hr>
+<form  [formGroup]="nameForm" >
+  <label for="email"><b>Email</b></label><BR>
+  <input type="email" placeholder="Enter Email" name="email" id="email1" formControlName="EmailId" class="invalid-feedback" >
+  
+  <!-- <div class="error" *ngIf="nameForm.get('EmailId')?.invalid &&nameForm.get('EmailId')">email is required -->
+   <!-- </div><br> -->
+   </form>
+   <form [formGroup]="name2form">
+  <label for="psw"><b>Password</b></label><BR>
+  <input type="password" placeholder="Enter Password" name="Password" id="pwd1" formControlName="Password" class="invalid-feedback" >
+  <div class="error" *ngIf="name2form.get('Password')?.invalid &&name2form.get('Password')">Password is required
+  </div><br>
+  </form>
+<!-- <button  (click)="clickme()" >Sign Up</button> -->
+  
+
+</form><button  (click)="clickme()" >Sign Up</button>
