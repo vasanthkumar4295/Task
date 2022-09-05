@@ -11,7 +11,9 @@ import { FilterPipeModule } from 'ngx-filter-pipe';
 })
 export class HomeComponent implements OnInit {
   id:number
-  title:string
+  rest:any
+  title:string;
+  parentpost:any[]=[];
   price:number
   p: number = 1;
   brand:string
@@ -20,7 +22,7 @@ export class HomeComponent implements OnInit {
   totalLength:any;
   filterBy:any;
 arrData:any;
-currentItem = 'Television';
+currentItem:'Television';
 
   constructor(private route:Router,private dataservice: AuthguadService,private router:Router) { }
 
@@ -31,25 +33,30 @@ pagenumber=1;
      console.log(Response)
       this.arrData = Response.products
       this.totalLength=Response.Length;
-      
+      // this.parentpost=Response.products
       
       
    }); 
+
+   
+   
    this.formdata=new FormGroup({
     title:new FormControl (""),
     id:new FormControl(),
   
    });
+   
   }
+  
   home(data:any){
-    console.log(data)
-    
-    
+     console.log(data)
     this.formdata.setValue({
       title: data.title,
       id: data.id});
-   // this.router.navigate(['/dashboard'])
+   
+   this.parentpost.push(data);
+   console.log('parentpost',this.parentpost)
+   console.log(this.parentpost)
+  //  this.router.navigate(['/dashboard'])
   }
- 
- 
-}
+  }

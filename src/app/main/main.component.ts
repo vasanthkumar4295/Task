@@ -35,13 +35,14 @@ export class MainComponent implements OnInit {
     // here edit value
     
     });
-    this.formdata=new FormGroup({
+         this.formdata=new FormGroup({
       title:new FormControl (""),
       id:new FormControl(),
     
      });
     localStorage.setItem('SeesionUser','vasanth') 
     this.currentItem="hello world"
+    console.log('this parent component',)
 
    
     this.subject$.next(console.log)
@@ -65,7 +66,7 @@ showStyle(){
     this.showFlag=true;  
 }
 
-
+   
   
   onClickSubmit(updatedData:object) {
    

@@ -1,2 +1,29 @@
-<p>dashboard works!</p>
-<div>{{item}}</div>
+
+<div class="container">
+
+    <table class="table" border="4">
+    <tr> 
+        
+        <th>Id</th>
+        <th>Title</th>
+        <th>BRAND<th>
+        <th>PRIZE</th>
+        
+        
+        
+        </tr>
+        <tr *ngFor="let data of item" >
+             <td>{{data.id}}</td>
+            <td>{{data.title}}</td>
+            <td> {{data.brand}}</td>
+             <td>{{data.price}}</td> 
+            
+        </tr>
+    </table><br>
+    <!-- <div *ngFor="let p of item" >
+    <p>{{p.id}}</p>
+    <p>{{p.title}}</p>
+    <p>{{p.brand}}</p> 
+
+    </div>
+    <p>{{item}}</p> -->

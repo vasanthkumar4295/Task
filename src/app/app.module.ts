@@ -14,6 +14,7 @@ import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
 import { AuthguadService } from './authguad.service';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { FilterPipeModule } from 'ngx-filter-pipe';
+import { TerminalComponent } from './terminal/terminal.component';
  
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FilterPipeModule } from 'ngx-filter-pipe';
     MainComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    TerminalComponent
   ],
   imports: [
     BrowserModule,
